@@ -9,6 +9,9 @@
   "author": "José Ernesto Tinoco Tamayo",
   "license": "ISC",
   "dependencies": {
+    "puppeteer": "^23.7.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3"
   }
