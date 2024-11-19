@@ -9,7 +9,7 @@ describe('Desafío #3', async () => {
 		page = await browser.newPage()
 	})
 	after(async () => {
-        await browser.close()
+		await browser.close()
 	})
 	beforeEach(async () => {})
 	afterEach(async () => {})
@@ -48,22 +48,22 @@ describe('Desafío #3', async () => {
 		const frameHandle = await page.$('#frame')
 		const frame = await frameHandle.contentFrame()
 
-        await frame.waitForSelector('#ajaxBusy')
+		await frame.waitForSelector('#ajaxBusy')
 
-        await frame.evaluate(() => {
-            const button = document.querySelector('.btnBuyProdcut'); 
-            if (button) {
-                button.click();
-            }
-        });
+		await frame.evaluate(() => {
+			const button = document.querySelector('.btnBuyProdcut')
+			if (button) {
+				button.click()
+			}
+		})
 
-        const precioCarrito = await frame.evaluate(() => {
+		const precioCarrito = await frame.evaluate(() => {
 			const element = document.querySelector('p.js-bestPrice')
 			return element ? element.innerHTML : null
 		})
 
-        console.log('Precio del producto en el carrito:', precioCarrito)
-        console.log('Ejecuta EXPECT...')
-        expect(precio).to.equal(precioCarrito)
+		console.log('Precio del producto en el carrito:', precioCarrito)
+		console.log('Ejecuta EXPECT...')
+		expect(precio).to.equal(precioCarrito)
 	})
 })
