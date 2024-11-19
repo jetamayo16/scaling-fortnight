@@ -30,7 +30,7 @@ describe('Desafío #3', async () => {
 		console.log('Nombre del producto:', nombre)
 		console.log('Precio del producto en página inicial:', precio)
 
-		buttonText = 'COMPRAR' // Reemplaza con el texto del botón que deseas buscar
+		buttonText = 'COMPRAR'
 		await page.evaluate((buttonText) => {
 			const buttons = Array.from(document.querySelectorAll('button'))
 			const button = buttons.find((b) =>
